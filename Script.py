@@ -87,6 +87,13 @@ def main():
                  "Genres": Anime_Genre,"Rating": Anime_Rate},]
 
     
+    # Create Results folder if not exist in the same script folder to store csv files
+    code_file_directory = path.dirname(path.abspath(__file__))
+    folder_path = path.join(code_file_directory, "Results")
+
+    if not path.exists(folder_path):
+        mkdir(folder_path)
+
     # Determine file name with the same name of anime and remove invalid characters
     file_name = Anime_Name
     invalid_chars = ['<', '>', ':', '"', '/', '\\', '|', '?', '*']
@@ -94,14 +101,7 @@ def main():
         for j in file_name:
             if (j == i):
                 file_name = file_name.replace(i,"")
-    file_path = "D:/Work/Learn/Python/MAL Script/Results/"+file_name+".csv"
-
-    # Create Results folder if not exist in the same script folder to store csv files
-    code_file_directory = path.dirname(path.abspath(__file__))
-    folder_path = path.join(code_file_directory, "Results")
-
-    if not path.exists(folder_path):
-        mkdir(folder_path)
+    file_path = folder_path+"/"+file_name+".csv"
     
     # create the csv file and but the keys and values of dic in it
     with open(file_path,'w', encoding="utf-8-sig") as final_file:
