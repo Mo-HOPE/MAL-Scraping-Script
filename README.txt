@@ -18,8 +18,20 @@
 
 - If you have a problem with method 2 just use method 1
 
-- The data stored in Results folder as csv file (you can open it with excel)
+- The data stored in Results folder that created only one time when you run the script for the first time file 
 
+- The data stored as csv file (you can open it with excel)
+
+
+
+!!! IMPORTANT !!!
+
+- download the following modules so the script can work
+
+1- pip install requests
+2- pip install BeautifulSoup4
+3- pip install lxml
+4- pip install googlesearch-python
 
 
 Created by: HØPE
