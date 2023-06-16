@@ -2,6 +2,8 @@ import requests
 import csv
 from bs4 import BeautifulSoup
 from googlesearch import search
+from os import path, path, mkdir
+
 
 ''' 
 Created by: HØPE
@@ -93,6 +95,13 @@ def main():
             if (j == i):
                 file_name = file_name.replace(i,"")
     file_path = "D:/Work/Learn/Python/MAL Script/Results/"+file_name+".csv"
+
+    # Create Results folder if not exist in the same script folder to store csv files
+    code_file_directory = path.dirname(path.abspath(__file__))
+    folder_path = path.join(code_file_directory, "Results")
+
+    if not path.exists(folder_path):
+        mkdir(folder_path)
     
     # create the csv file and but the keys and values of dic in it
     with open(file_path,'w', encoding="utf-8-sig") as final_file:
